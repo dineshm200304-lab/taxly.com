@@ -11,19 +11,25 @@
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; overflow-x: hidden; width: 100%; -webkit-font-smoothing: antialiased; }
         .gradient-text { background: linear-gradient(135deg, #2563eb, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* IMPRESSIVE HERO GRADIENT */
         .hero-bg { 
-            background: 
-                radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.08), transparent 40%),
-                radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.08), transparent 40%); 
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(124, 58, 237, 0.05) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(37, 99, 235, 0.02) 0px, transparent 80%);
         }
-        .glass-card { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(229, 231, 235, 0.5); }
+
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(229, 231, 235, 0.5); }
         .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         .faq-active .faq-content { max-height: 500px; padding-bottom: 1.5rem; }
         .faq-active .faq-icon { transform: rotate(180deg); }
         
         .hero-headline {
-            font-size: clamp(1.75rem, 5vw + 0.8rem, 4.5rem);
-            line-height: 1.15;
+            font-size: clamp(1.85rem, 4.8vw + 1rem, 4.8rem);
+            line-height: 1.1;
+            letter-spacing: -0.03em;
         }
         
         @media (min-width: 1024px) {
@@ -43,9 +49,9 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
             transform: rotate(45deg);
-            transition: 0.5s;
+            transition: 0.8s;
             display: block;
         }
         .btn-shine:hover::after {
@@ -53,145 +59,203 @@
         }
 
         .service-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .service-card:hover {
-            transform: translateY(-5px);
-            border-color: #2563eb33;
-            box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.1);
+            transform: translateY(-8px);
+            border-color: #2563eb44;
+            box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.12);
         }
 
         .friction-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
             border: 1px solid rgba(37, 99, 235, 0.08);
-            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.02);
         }
+        
         .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 hero-bg antialiased">
 
     <!-- Header -->
     <header class="fixed w-full top-0 z-50 glass-card">
-        <div class="max-w-7xl mx-auto px-4 md:px-8 h-16 md:h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 md:w-9 md:h-9 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg">
-                    <span class="text-white font-extrabold text-lg md:text-xl">T</span>
+        <div class="max-w-7xl mx-auto px-5 md:px-10 h-16 md:h-20 flex items-center justify-between">
+            <!-- Brand -->
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 md:w-11 md:h-11 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/30">
+                    <span class="text-white font-extrabold text-xl md:text-2xl">T</span>
                 </div>
-                <span class="font-bold text-lg md:text-xl tracking-tight text-slate-900">TAXLY<span class="text-blue-600">INDIA</span></span>
+                <span class="font-extrabold text-xl md:text-2xl tracking-tighter text-slate-900">TAXLY<span class="text-blue-600">INDIA</span></span>
             </div>
-            <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-900">
-                <a href="tel:+918882935471" class="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            
+            <!-- Desktop Nav -->
+            <div class="hidden lg:flex items-center gap-10">
+                <nav class="flex items-center gap-8 text-sm font-bold text-slate-500 uppercase tracking-widest">
+                    <a href="#about" class="hover:text-blue-600 transition">About</a>
+                    <a href="#services" class="hover:text-blue-600 transition">Services</a>
+                    <a href="#pricing" class="hover:text-blue-600 transition">Pricing</a>
+                </nav>
+                <div class="h-8 w-[1px] bg-slate-200"></div>
+                <a href="tel:+918882935471" class="flex items-center gap-2 text-slate-900 hover:text-blue-600 transition font-bold">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                     +91 8882935471
                 </a>
-                <button onclick="openModal()" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition shadow-xl active:scale-95">
-                    Get Free Consultation
+                <button onclick="openModal()" class="btn-shine bg-blue-600 text-white px-7 py-3 rounded-full font-extrabold shadow-xl shadow-blue-600/20 active:scale-95 transition-all">
+                    Free Consultation
                 </button>
             </div>
-            <div class="md:hidden">
+
+            <!-- Mobile Quick Contact -->
+            <div class="lg:hidden flex items-center gap-3">
                 <a href="tel:+918882935471" class="w-10 h-10 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                 </a>
+                <button onclick="openModal()" class="bg-blue-600 text-white px-4 py-2 rounded-full font-bold text-xs shadow-lg">
+                    Get Started
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="pt-28 pb-10 md:pt-48 md:pb-24 px-4 md:px-8 relative overflow-hidden">
-        <div class="max-w-6xl mx-auto relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-slate-700 text-[9px] md:text-xs font-bold mb-6 md:mb-10 mx-auto">
-                <span class="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-                ⭐ 4.9/5 Rated by 42,800+ Entrepreneurs
+    <!-- Hero Section (IMPRESSIVE OVERHAUL) -->
+    <section class="pt-28 pb-12 lg:pt-52 lg:pb-32 px-5 md:px-10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10 flex flex-col items-center">
+            
+            <!-- Lead Magnet Pill -->
+            <div class="animate-float mb-8">
+                <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-blue-600/5 border border-blue-200 shadow-sm text-blue-600 text-[10px] md:text-sm font-black uppercase tracking-widest">
+                    <span class="flex h-2 w-2 rounded-full bg-blue-600 animate-ping"></span>
+                    Limited Offer: Free Billing Software Included
+                </div>
             </div>
             
-            <h1 class="hero-headline font-extrabold tracking-tight mb-6 md:mb-8 text-slate-900">
-                <span class="hero-headline-1line block">Launch Your Business in 25 Days</span>
-                <span class="gradient-text block">With Complete Peace of Mind</span>
-            </h1>
+            <!-- Headline Container -->
+            <div class="text-center max-w-5xl mb-10 md:mb-14">
+                <h1 class="hero-headline font-extrabold text-slate-900">
+                    <span class="hero-headline-1line block">Launch Your Business in 25 Days</span>
+                    <span class="gradient-text block mt-2">With Complete Peace of Mind</span>
+                </h1>
+                
+                <!-- Social Proof Mini -->
+                <div class="mt-6 flex items-center justify-center gap-4">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-white bg-blue-100"></div>
+                        <div class="w-8 h-8 rounded-full border-2 border-white bg-indigo-100"></div>
+                    </div>
+                    <p class="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest">
+                        ⭐ 4.9/5 Rated by 42,800+ Founders
+                    </p>
+                </div>
+            </div>
             
-            <p class="text-sm md:text-xl text-slate-500 max-w-3xl mx-auto mb-10 md:mb-12 leading-relaxed font-medium">
-                Get your Company Registration + GST Compliance Support + <span class="text-slate-900 font-bold border-b-2 border-blue-500/30">FREE GST Billing Software</span> — everything required to start invoicing clients from Day 1.
+            <p class="text-sm md:text-xl text-slate-500 max-w-3xl text-center mb-12 md:mb-16 leading-relaxed font-medium">
+                Expert CA-led Company Registration + GST Support + <span class="text-slate-900 font-extrabold border-b-4 border-blue-500/20">FREE GST Billing Software</span>. Everything required to start invoicing clients professionally from Day 1.
             </p>
             
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-5">
-                <button onclick="openModal()" class="btn-shine w-full sm:w-auto px-6 md:px-10 py-4 md:py-5 bg-blue-600 text-white rounded-2xl font-extrabold text-sm md:text-lg hover:bg-blue-700 transition transform hover:-translate-y-1 shadow-2xl">
-                    Get Free Consultation + Software
+            <!-- Main CTAs -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 w-full max-w-2xl">
+                <button onclick="openModal()" class="btn-shine w-full sm:w-auto px-10 py-5 bg-blue-600 text-white rounded-2xl font-black text-base md:text-xl hover:bg-blue-700 transition transform hover:-translate-y-1 shadow-[0_20px_50px_-10px_rgba(37,99,235,0.4)]">
+                    Get Free CA Consultation
                 </button>
-                <a href="#pricing" class="w-full sm:w-auto px-6 md:px-10 py-4 md:py-5 bg-white text-slate-900 border border-slate-200 rounded-2xl font-extrabold text-sm md:text-lg hover:bg-slate-50 transition shadow-sm text-center">
-                    See Packages & Pricing
+                <a href="#pricing" class="w-full sm:w-auto px-10 py-5 bg-white text-slate-900 border-2 border-slate-100 rounded-2xl font-black text-base md:text-xl hover:bg-slate-50 transition text-center">
+                    See All Packages
                 </a>
+            </div>
+
+            <!-- Authority Badges Integrated -->
+            <div class="mt-16 md:mt-24 grid grid-cols-2 md:flex md:flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
+                <span class="text-[10px] md:text-sm font-black tracking-[0.3em] uppercase">StartupIndia</span>
+                <span class="text-[10px] md:text-sm font-black tracking-[0.3em] uppercase">MSME Verified</span>
+                <span class="text-[10px] md:text-sm font-black tracking-[0.3em] uppercase">ISO 9001:2025</span>
+                <span class="text-[10px] md:text-sm font-black tracking-[0.3em] uppercase">Digital India</span>
             </div>
         </div>
     </section>
 
-    <!-- Core Offer Bundle -->
-    <section class="py-12 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="text-center mb-10 md:mb-16">
-                <h2 class="text-2xl md:text-4xl font-extrabold mb-3 text-slate-900">The 3-in-1 Growth Bundle</h2>
-                <p class="text-slate-500 text-sm md:text-base font-medium italic px-4">Empowering founders with real professional support.</p>
+    <!-- Core Offer Bundle (THE MACHINE) -->
+    <section class="py-16 md:py-28 bg-white relative">
+        <div class="max-w-7xl mx-auto px-5 md:px-10">
+            <div class="text-center mb-14 md:mb-20">
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-4 text-slate-900">The 3-in-1 Startup Launchpad</h2>
+                <p class="text-slate-500 font-bold text-sm md:text-lg uppercase tracking-widest opacity-60">One Partner. One Price. Complete Setup.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-5 md:gap-8">
-                <div class="p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:shadow-xl transition duration-300 group">
-                    <div class="w-12 h-12 md:w-14 md:h-14 bg-blue-100 text-blue-600 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="16" y1="11" x2="22" y2="11"/></svg>
+            <div class="grid md:grid-cols-3 gap-6 md:gap-10">
+                <!-- CA-Led Registration -->
+                <div class="p-8 md:p-12 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="16" y1="11" x2="22" y2="11"/></svg>
                     </div>
-                    <h3 class="text-lg md:text-2xl font-bold mb-3 md:mb-4">CA-Led Registration</h3>
-                    <p class="text-slate-600 leading-relaxed text-xs md:text-base font-medium">Company setup done by real experts — Pvt Ltd, LLP, or OPC with 100% filing accuracy.</p>
+                    <h3 class="text-xl md:text-2xl font-black mb-4">CA-Led Registration</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base font-medium">Company setup done by qualified experts — Pvt Ltd, LLP, or OPC with 100% accuracy and Govt approval.</p>
                 </div>
-                <div class="p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:shadow-xl transition duration-300 group">
-                    <div class="w-12 h-12 md:w-14 md:h-14 bg-purple-100 text-purple-600 rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <!-- Compliance Managed -->
+                <div class="p-8 md:p-12 rounded-[2.5rem] bg-slate-50 border border-slate-100 hover:shadow-2xl transition duration-500 group">
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-purple-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                     </div>
-                    <h3 class="text-lg md:text-2xl font-bold mb-3 md:mb-4">Compliance Managed</h3>
-                    <p class="text-slate-600 leading-relaxed text-xs md:text-base font-medium">GST filings + ROC returns handled — so you avoid heavy penalties and legal stress.</p>
+                    <h3 class="text-xl md:text-2xl font-black mb-4">Compliance Managed</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base font-medium">GST filings + ROC returns handled for you — so you avoid heavy penalties and focus on revenue growth.</p>
                 </div>
-                <div class="p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] bg-blue-600 text-white shadow-2xl shadow-blue-600/20">
-                    <div class="w-12 h-12 md:w-14 md:h-14 bg-white/20 text-white rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/></svg>
+                <!-- Free Billing Software -->
+                <div class="p-8 md:p-12 rounded-[2.5rem] bg-blue-600 text-white shadow-[0_30px_60px_-15px_rgba(37,99,235,0.4)] transition duration-500 transform hover:scale-[1.02]">
+                    <div class="w-14 h-14 md:w-16 md:h-16 bg-white/20 text-white rounded-2xl flex items-center justify-center mb-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/></svg>
                     </div>
-                    <h3 class="text-lg md:text-2xl font-bold mb-3 md:mb-4">Free Billing Software</h3>
-                    <p class="text-blue-50 leading-relaxed text-xs md:text-base font-medium">Create invoices, track sales, and run your business professionally without paying for extra tools.</p>
+                    <h3 class="text-xl md:text-2xl font-black mb-4">Free Billing Software</h3>
+                    <p class="text-blue-50 leading-relaxed font-medium text-sm md:text-base">Professional GST invoicing and track sales from Day 1 at zero extra cost. No expensive subscriptions needed.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Us Section -->
-    <section class="py-12 md:py-24 bg-slate-50 border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
-                <div class="w-full lg:w-5/12 text-center lg:text-left">
-                    <div class="relative inline-block rounded-[1.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl bg-white p-1.5 md:p-2">
-                        <div class="aspect-[4/5] bg-slate-100 rounded-[1.3rem] md:rounded-[2.8rem] flex items-center justify-center overflow-hidden w-full max-w-[400px] mx-auto">
-                            <div class="text-center p-6 md:p-8">
-                                <svg class="w-12 h-12 md:w-16 md:h-16 text-blue-200 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                                <p class="text-slate-400 font-bold uppercase tracking-widest text-[9px] md:text-xs">Expert CA Advisory Team</p>
+    <section id="about" class="py-16 md:py-28 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-5 md:px-10">
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
+                <div class="w-full lg:w-5/12">
+                    <div class="relative rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-2xl bg-white p-2">
+                        <div class="aspect-[4/5] bg-slate-100 rounded-[2.2rem] md:rounded-[3.8rem] flex items-center justify-center overflow-hidden">
+                            <!-- SVG Placeholder to maintain professional look -->
+                            <div class="text-center p-10 opacity-40">
+                                <svg class="w-20 h-20 text-blue-600 mx-auto mb-6" fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                <p class="text-xs font-black uppercase tracking-[0.3em]">Taxly India HQ</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="w-full lg:w-7/12">
-                    <div class="inline-flex items-center gap-2 mb-4 md:mb-6">
-                        <span class="w-6 md:w-8 h-[2px] bg-blue-600"></span>
-                        <span class="text-blue-600 font-bold text-[10px] md:text-xs uppercase tracking-[0.2em]">About Taxly India</span>
+                    <div class="inline-flex items-center gap-3 mb-6">
+                        <span class="w-10 h-[3px] bg-blue-600"></span>
+                        <span class="text-blue-600 font-extrabold text-xs uppercase tracking-[0.2em]">Our Professional Edge</span>
                     </div>
-                    <h2 class="text-2xl md:text-5xl font-extrabold text-slate-900 mb-6 md:mb-8 leading-tight">
-                        Trusted team of CAs for business and Compliance
+                    <h2 class="text-3xl md:text-5xl font-black text-slate-900 mb-8 leading-tight">
+                        Trusted team of Chartered Accountants for your Business
                     </h2>
-                    <div class="space-y-4 md:space-y-6 text-slate-600 text-xs md:text-base font-medium leading-relaxed">
-                        <p>Taxly India Pvt Ltd is a professional, CA-led Company dedicated to helping entrepreneurs navigate India’s complex legal landscape with confidence.</p>
-                        <p>We provide end-to-end services including company registration, GST filing, income tax, and ROC audits. Our goal is accuracy and transparency in every filing.</p>
+                    <div class="space-y-6 text-slate-600 text-sm md:text-lg font-medium leading-relaxed">
+                        <p>Taxly India Pvt Ltd is a professional, CA-led firm dedicated to helping entrepreneurs navigate India’s complex legal landscape with absolute confidence.</p>
+                        <p>We prioritize <strong>accuracy and long-term compliance</strong> over just "fast registrations." Our qualified CA team ensures your business is audit-ready from the very first filing.</p>
                     </div>
-                    <div class="mt-8 md:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-                        <div class="flex items-center gap-3 p-3 md:p-4 bg-white rounded-xl md:rounded-2xl border border-slate-100 shadow-sm">
-                            <svg class="text-green-600 shrink-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span class="text-[10px] md:text-sm font-bold text-slate-700">Expert CA guidance</span>
+                    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-4 p-5 bg-white rounded-3xl border border-slate-100 shadow-sm">
+                            <div class="w-10 h-10 bg-green-50 text-green-600 rounded-full flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span class="text-sm md:text-base font-bold text-slate-800">Expert CA Guidance</span>
                         </div>
-                        <div class="flex items-center gap-3 p-3 md:p-4 bg-white rounded-xl md:rounded-2xl border border-slate-100 shadow-sm">
-                            <svg class="text-green-600 shrink-0" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span class="text-[10px] md:text-sm font-bold text-slate-700">Transparent practices</span>
+                        <div class="flex items-center gap-4 p-5 bg-white rounded-3xl border border-slate-100 shadow-sm">
+                            <div class="w-10 h-10 bg-green-50 text-green-600 rounded-full flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            </div>
+                            <span class="text-sm md:text-base font-bold text-slate-800">100% Online Process</span>
                         </div>
                     </div>
                 </div>
@@ -199,203 +263,206 @@
         </div>
     </section>
 
-    <!-- Complete Business & Compliance Solutions (All 9 Services) -->
-    <section class="py-12 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 md:px-8 text-center">
-            <h2 class="text-2xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Complete Business & Compliance Solutions</h2>
-            <p class="text-slate-500 font-medium text-xs md:text-lg max-w-3xl mx-auto mb-12 md:mb-16 leading-relaxed">
-                At Taxly India Pvt Ltd, we provide end-to-end legal, tax, and compliance services tailored for startups and growing businesses across India.
-            </p>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 text-left">
-                <!-- LLP -->
-                <div class="service-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-100 bg-white">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center mb-5 md:mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    <!-- Complete Business Solutions (FULL GRID) -->
+    <section id="services" class="py-16 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-5 md:px-10">
+            <div class="text-center mb-16 md:mb-24">
+                <h2 class="text-3xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight leading-tight">Complete Business & <br><span class="gradient-text">Compliance Solutions</span></h2>
+                <p class="text-slate-500 font-bold text-sm md:text-xl max-w-3xl mx-auto">One firm for every legal and financial requirement of your growing company.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 text-left">
+                <!-- 9 Service Items -->
+                <div class="service-card p-8 md:p-10 rounded-3xl border border-slate-100 bg-white">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     </div>
-                    <h4 class="text-lg md:text-xl font-extrabold mb-2 md:mb-3">LLP Registration</h4>
-                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed">Set up your LLP with low compliance and high flexibility. MCA approvals managed smoothly.</p>
+                    <h4 class="text-lg md:text-xl font-black mb-3">LLP Registration</h4>
+                    <p class="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">Low compliance, high flexibility. We manage documentation and MCA approvals end-to-end.</p>
                 </div>
-                <!-- OPC -->
-                <div class="service-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-100 bg-white">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center mb-5 md:mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="15" r="3"/><circle cx="9" cy="7" r="4"/><path d="M10 15H6a4 4 0 0 0-4 4v2"/></svg>
+
+                <div class="service-card p-8 md:p-10 rounded-3xl border border-slate-100 bg-white">
+                    <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="15" r="3"/><circle cx="9" cy="7" r="4"/><path d="M10 15H6a4 4 0 0 0-4 4v2"/></svg>
                     </div>
-                    <h4 class="text-lg md:text-xl font-extrabold mb-2 md:mb-3">OPC Registration</h4>
-                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed">Start as a single founder with full control, legal recognition, and guided CA compliance.</p>
+                    <h4 class="text-lg md:text-xl font-black mb-3">OPC Registration</h4>
+                    <p class="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">Single founder startup with legal recognition. Full control and guided CA compliance.</p>
                 </div>
-                <!-- Section 8 -->
-                <div class="service-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-100 bg-white">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center mb-5 md:mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+
+                <div class="service-card p-8 md:p-10 rounded-3xl border border-slate-100 bg-white">
+                    <div class="w-12 h-12 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                     </div>
-                    <h4 class="text-lg md:text-xl font-extrabold mb-2 md:mb-3">Section 8 Registration</h4>
-                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed">Launch your NGO legally. We manage licensing, incorporation, and documentation.</p>
+                    <h4 class="text-lg md:text-xl font-black mb-3">Section 8 NGO</h4>
+                    <p class="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">Launch your non-profit professionally. 80G/12A registration support included.</p>
                 </div>
-                <!-- GST -->
-                <div class="service-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-100 bg-white">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center mb-5 md:mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/></svg>
+
+                <div class="service-card p-8 md:p-10 rounded-3xl border border-slate-100 bg-white">
+                    <div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
                     </div>
-                    <h4 class="text-lg md:text-xl font-extrabold mb-2 md:mb-3">GST Registration & Filing</h4>
-                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed">Handle registration, return filing, ITC matching, and GST notices efficiently.</p>
+                    <h4 class="text-lg md:text-xl font-black mb-3">GST Filing Support</h4>
+                    <p class="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">End-to-end GST returns, ITC matching, and response to GST notices by experts.</p>
                 </div>
-                <!-- ITR -->
-                <div class="service-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-100 bg-white">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center mb-5 md:mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+
+                <div class="service-card p-8 md:p-10 rounded-3xl border border-slate-100 bg-white">
+                    <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
                     </div>
-                    <h4 class="text-lg md:text-xl font-extrabold mb-2 md:mb-3">Income Tax Filing</h4>
-                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed">Accurate tax filing for individuals and businesses with tax planning support.</p>
+                    <h4 class="text-lg md:text-xl font-black mb-3">Income Tax Filing</h4>
+                    <p class="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">Accurate ITR filing for founders and entities with tax planning strategy.</p>
                 </div>
-                <!-- ROC -->
-                <div class="service-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-100 bg-white">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center mb-5 md:mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+
+                <div class="service-card p-8 md:p-10 rounded-3xl border border-slate-100 bg-white">
+                    <div class="w-12 h-12 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
                     </div>
-                    <h4 class="text-lg md:text-xl font-extrabold mb-2 md:mb-3">ROC Compliance</h4>
-                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed">We file AOC-4, MGT-7, and manage all annual MCA company compliance.</p>
+                    <h4 class="text-lg md:text-xl font-black mb-3">ROC Compliance</h4>
+                    <p class="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">Filing AOC-4, MGT-7, and handling all annual board meeting documentation.</p>
                 </div>
-                <!-- Audit -->
-                <div class="service-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-100 bg-white">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center mb-5 md:mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+
+                <div class="service-card p-8 md:p-10 rounded-3xl border border-slate-100 bg-white">
+                    <div class="w-12 h-12 bg-cyan-50 text-cyan-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                     </div>
-                    <h4 class="text-lg md:text-xl font-extrabold mb-2 md:mb-3">Audit Services</h4>
-                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed">Statutory and internal audits by qualified CAs for total transparency.</p>
+                    <h4 class="text-lg md:text-xl font-black mb-3">Audit Services</h4>
+                    <p class="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">Statutory and internal audits by qualified CAs for absolute transparency.</p>
                 </div>
-                <!-- Startup India -->
-                <div class="service-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-100 bg-white">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center mb-5 md:mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4 4 4-10 10z"/><path d="M17 14V2"/><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.07-3.66l5.31-3.13L13 2.11"/></svg>
+
+                <div class="service-card p-8 md:p-10 rounded-3xl border border-slate-100 bg-white">
+                    <div class="w-12 h-12 bg-yellow-50 text-yellow-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4 4 4-10 10z"/><path d="M17 14V2"/><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.07-3.66l5.31-3.13L13 2.11"/></svg>
                     </div>
-                    <h4 class="text-lg md:text-xl font-extrabold mb-2 md:mb-3">Startup India Advisory</h4>
-                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed">DPIIT recognition and 80-IAC tax holiday claims support.</p>
+                    <h4 class="text-lg md:text-xl font-black mb-3">Startup India</h4>
+                    <p class="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">DPIIT recognition and 80-IAC tax holiday claims support for eligible firms.</p>
                 </div>
-                <!-- Funding -->
-                <div class="service-card p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-100 bg-white">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center mb-5 md:mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+
+                <div class="service-card p-8 md:p-10 rounded-3xl border border-slate-100 bg-white">
+                    <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                     </div>
-                    <h4 class="text-lg md:text-xl font-extrabold mb-2 md:mb-3">Funding Advisory</h4>
-                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed">Investor-ready pitch decks, CMA data, and valuation reports support.</p>
+                    <h4 class="text-lg md:text-xl font-black mb-3">Funding Advisory</h4>
+                    <p class="text-slate-500 text-xs md:text-sm font-medium leading-relaxed">Investor pitch decks, CMA data, and valuation reports for funding support.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-12 md:py-24 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="text-center mb-10 md:mb-16 px-2">
-                <h2 class="text-2xl md:text-4xl font-extrabold mb-3 text-slate-900">Clear & Structured Pricing</h2>
-                <p class="text-slate-500 font-semibold uppercase tracking-wider text-[9px] md:text-sm">Professional Fees Only • 2026 Standard Pricing</p>
+    <section id="pricing" class="py-16 md:py-28 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-5 md:px-10">
+            <div class="text-center mb-12 md:mb-20 px-2">
+                <h2 class="text-3xl md:text-5xl font-black mb-3 text-slate-900">Clear & Structured Pricing</h2>
+                <p class="text-slate-500 font-bold uppercase tracking-widest text-[10px] md:text-sm">Standard Professional Fees • 2026 Edition</p>
             </div>
-            <div class="grid lg:grid-cols-3 gap-6 md:gap-8">
+            <div class="grid lg:grid-cols-3 gap-6 md:gap-10 items-start">
                 <!-- Startup Essential -->
-                <div class="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] border border-slate-200 flex flex-col hover:border-blue-300 transition-all shadow-sm">
-                    <div class="mb-6 md:mb-8">
-                        <h3 class="font-bold text-[10px] md:text-xs text-slate-400 uppercase tracking-widest mb-2">Startup Essential</h3>
-                        <p class="text-[10px] md:text-xs text-slate-400 font-bold line-through mb-1">Mkt Price: ₹2,999</p>
+                <div class="bg-white p-8 md:p-12 rounded-[2.5rem] border border-slate-200 flex flex-col hover:border-blue-300 transition-all shadow-sm">
+                    <div class="mb-8">
+                        <h3 class="font-black text-xs md:text-sm text-slate-400 uppercase tracking-widest mb-2">Startup Essential</h3>
+                        <p class="text-xs text-slate-300 font-bold line-through mb-1">Market Price: ₹2,999</p>
                         <div class="flex items-baseline gap-1.5">
-                            <span class="text-slate-500 text-[10px] md:text-sm font-medium">Now</span>
-                            <span class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">₹1,199</span>
+                            <span class="text-slate-500 text-xs md:text-sm font-black">Now</span>
+                            <span class="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter">₹1,199</span>
                         </div>
                     </div>
-                    <ul class="space-y-3 md:space-y-4 mb-8 md:mb-10 flex-grow">
-                        <li class="flex items-center gap-2 md:gap-3 text-slate-600 text-[11px] md:text-sm font-medium">
-                            <svg class="text-green-500 shrink-0" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex items-center gap-3 text-slate-600 text-sm md:text-base font-bold">
+                            <svg class="text-green-500 shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             GST Registration Filing
                         </li>
-                        <li class="flex items-center gap-2 md:gap-3 font-bold text-blue-600 text-[11px] md:text-sm italic">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <li class="flex items-center gap-3 font-extrabold text-blue-600 text-sm md:text-base italic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             FREE Billing Software
                         </li>
                     </ul>
-                    <button onclick="openModal()" class="w-full py-3.5 md:py-4.5 bg-slate-900 text-white rounded-xl md:rounded-2xl font-extrabold text-sm md:text-base hover:bg-slate-800 transition">Get Started</button>
+                    <button onclick="openModal()" class="w-full py-4.5 bg-slate-900 text-white rounded-2xl font-black text-base md:text-lg hover:bg-slate-800 transition">Get Started</button>
                 </div>
-                <!-- Growth Bundle (Featured) -->
-                <div class="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] border-2 border-blue-600 flex flex-col relative shadow-2xl shadow-blue-600/10 lg:scale-105 z-10 transition-transform">
-                    <div class="absolute -top-3 md:-top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-3 md:px-5 py-1 md:py-1.5 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest">Best Seller</div>
-                    <div class="mb-6 md:mb-8">
-                        <h3 class="font-bold text-[10px] md:text-xs text-blue-400 uppercase tracking-widest mb-2">Growth Bundle</h3>
-                        <p class="text-[10px] md:text-xs text-slate-400 font-bold line-through mb-1">Mkt Price: ₹15,999</p>
+                
+                <!-- Growth Bundle (FEATURED) -->
+                <div class="bg-white p-8 md:p-12 rounded-[2.5rem] border-4 border-blue-600 flex flex-col relative shadow-2xl lg:scale-110 z-10 transition-transform">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest">Most Popular</div>
+                    <div class="mb-8">
+                        <h3 class="font-black text-xs md:text-sm text-blue-500 uppercase tracking-widest mb-2">Growth Bundle</h3>
+                        <p class="text-xs text-slate-300 font-bold line-through mb-1">Market Price: ₹15,999</p>
                         <div class="flex items-baseline gap-1.5">
-                            <span class="text-slate-500 text-[10px] md:text-sm font-medium">Now</span>
-                            <span class="text-3xl md:text-5xl font-black text-blue-600 tracking-tight">₹6,999</span>
+                            <span class="text-slate-500 text-xs md:text-sm font-black">Now</span>
+                            <span class="text-4xl md:text-6xl font-black text-blue-600 tracking-tighter">₹6,999</span>
                         </div>
                     </div>
-                    <ul class="space-y-3 md:space-y-4 mb-8 md:mb-10 flex-grow text-[11px] md:text-sm">
-                        <li class="flex items-center gap-2 md:gap-3 text-slate-700 font-bold italic underline decoration-blue-600 underline-offset-4">
-                            <svg class="text-green-500 shrink-0" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <ul class="space-y-4 mb-10 flex-grow">
+                        <li class="flex items-center gap-3 text-slate-900 font-black text-sm md:text-base italic underline decoration-blue-600 decoration-2 underline-offset-4">
+                            <svg class="text-green-500 shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             Company Incorporation
                         </li>
-                        <li class="flex items-center gap-2 md:gap-3 font-bold text-blue-600 italic">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <li class="flex items-center gap-3 font-extrabold text-blue-600 text-sm md:text-base">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                             FREE Billing Software
                         </li>
                     </ul>
-                    <button onclick="openModal()" class="w-full py-3.5 md:py-4.5 bg-blue-600 text-white rounded-xl md:rounded-2xl font-black text-sm md:text-lg hover:bg-blue-700 transition shadow-xl active:scale-95">Claim Growth Offer</button>
+                    <button onclick="openModal()" class="w-full py-5 bg-blue-600 text-white rounded-2xl font-black text-base md:text-xl hover:bg-blue-700 transition shadow-xl shadow-blue-600/30 active:scale-95">Claim Offer Now</button>
                 </div>
+
                 <!-- Compliance Pro -->
-                <div class="bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2rem] border border-slate-200 flex flex-col hover:border-purple-300 transition-all shadow-sm">
-                    <div class="mb-6 md:mb-8">
-                        <h3 class="font-bold text-[10px] md:text-xs text-slate-400 uppercase tracking-widest mb-2">Compliance Pro</h3>
-                        <p class="text-[10px] md:text-xs text-slate-400 font-bold line-through mb-1">Mkt Price: ₹5,999</p>
+                <div class="bg-white p-8 md:p-12 rounded-[2.5rem] border border-slate-200 flex flex-col hover:border-purple-300 transition-all shadow-sm">
+                    <div class="mb-8">
+                        <h3 class="font-black text-xs md:text-sm text-slate-400 uppercase tracking-widest mb-2">Compliance Pro</h3>
+                        <p class="text-xs text-slate-300 font-bold line-through mb-1">Market Price: ₹5,999</p>
                         <div class="flex items-baseline gap-1.5">
-                            <span class="text-slate-500 text-[10px] md:text-sm font-medium">Now</span>
-                            <span class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">₹1,999</span>
+                            <span class="text-slate-500 text-xs md:text-sm font-black">Now</span>
+                            <span class="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter">₹1,999</span>
                         </div>
                     </div>
-                    <ul class="space-y-3 md:space-y-4 mb-8 md:mb-10 flex-grow text-[11px] md:text-sm">
-                        <li class="flex items-center gap-2 md:gap-3 text-slate-600 font-medium">
-                            <svg class="text-green-500 shrink-0" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                            Annual Compliance Support
+                    <ul class="space-y-4 mb-10 flex-grow text-sm md:text-base">
+                        <li class="flex items-center gap-3 text-slate-600 font-bold">
+                            <svg class="text-green-500 shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Annual ROC Filing Support
                         </li>
                     </ul>
-                    <button onclick="openModal()" class="w-full py-3.5 md:py-4.5 bg-slate-900 text-white rounded-xl md:rounded-2xl font-extrabold text-sm md:text-base hover:bg-slate-800 transition">Get Started</button>
+                    <button onclick="openModal()" class="w-full py-4.5 bg-slate-900 text-white rounded-2xl font-black text-base md:text-lg hover:bg-slate-800 transition">Get Started</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Zero Risk friction reduction Section -->
-    <section class="py-12 md:py-24 bg-slate-50 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
-            <div class="bg-white rounded-3xl md:rounded-[4rem] p-6 md:p-16 border border-blue-100 shadow-2xl relative overflow-hidden text-center md:text-left">
-                <div class="absolute -top-16 md:-top-24 -right-16 md:-right-24 w-48 h-48 md:w-64 md:h-64 bg-blue-50 rounded-full opacity-50"></div>
+    <section class="py-16 md:py-28 bg-slate-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 md:px-10 relative z-10">
+            <div class="bg-white rounded-[2.5rem] md:rounded-[4rem] p-8 md:p-20 border border-blue-100 shadow-2xl relative overflow-hidden">
+                <div class="absolute -top-16 md:-top-24 -right-16 md:-right-24 w-48 h-48 md:w-80 md:h-80 bg-blue-50 rounded-full opacity-50"></div>
                 
-                <div class="text-center mb-10 md:mb-16 relative">
-                    <div class="inline-flex items-center gap-2 px-3 md:px-4 py-1 md:py-1.5 rounded-full bg-blue-600 text-white text-[8px] md:text-[10px] font-black uppercase tracking-widest mb-4 md:mb-6">
+                <div class="text-center mb-16 relative">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600 text-white text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-6">
                         Irresistible Taxly Guarantee
                     </div>
-                    <h2 class="text-2xl md:text-5xl font-extrabold text-slate-900 mb-4 md:mb-6 tracking-tight">Zero Risk. Total Confidence.</h2>
-                    <p class="text-slate-500 font-medium text-xs md:text-lg max-w-2xl mx-auto leading-relaxed px-2">We don’t just file your papers. We act as your business co-pilot to ensure you never face a compliance penalty.</p>
+                    <h2 class="text-3xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">Zero Risk. Total Confidence.</h2>
+                    <p class="text-slate-500 font-bold text-sm md:text-xl max-w-3xl mx-auto leading-relaxed">We don’t just file your papers. We act as your business co-pilot to ensure you never face a compliance penalty.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-12">
-                    <div class="flex flex-col sm:flex-row gap-4 md:gap-6 p-5 md:p-6 rounded-2xl md:rounded-3xl friction-card">
-                        <div class="w-10 h-10 md:w-14 md:h-14 bg-green-50 text-green-600 rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 mx-auto sm:mx-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" md:width="28" md:height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 12 14 16 10"/></svg>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-14">
+                    <div class="flex flex-col sm:flex-row gap-6 p-7 md:p-8 rounded-[2rem] friction-card">
+                        <div class="w-12 h-12 md:w-16 md:h-16 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center shrink-0 mx-auto sm:mx-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 11 12 14 16 10"/></svg>
                         </div>
                         <div class="text-center sm:text-left">
-                            <h4 class="text-sm md:text-lg font-extrabold text-slate-900 mb-1 md:mb-2">100% Name Approval Support</h4>
-                            <p class="text-slate-500 text-[11px] md:text-sm leading-relaxed font-medium">MCA approval is our priority. If Govt rejects your chosen name, we refile it for FREE until approved.</p>
+                            <h4 class="text-lg md:text-2xl font-black text-slate-900 mb-2">100% Name Approval Support</h4>
+                            <p class="text-slate-500 text-sm md:text-base leading-relaxed font-bold">MCA approval is our priority. If Govt rejects your chosen name, we refile it for FREE until approved.</p>
                         </div>
                     </div>
-                    <div class="flex flex-col sm:flex-row gap-4 md:gap-6 p-5 md:p-6 rounded-2xl md:rounded-3xl friction-card">
-                        <div class="w-10 h-10 md:w-14 md:h-14 bg-blue-50 text-blue-600 rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 mx-auto sm:mx-0">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" md:width="28" md:height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8l-8 8"/><path d="M8 8l8 8"/></svg>
+                    <div class="flex flex-col sm:flex-row gap-6 p-7 md:p-8 rounded-[2rem] friction-card">
+                        <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center shrink-0 mx-auto sm:mx-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8l-8 8"/><path d="M8 8l8 8"/></svg>
                         </div>
                         <div class="text-center sm:text-left">
-                            <h4 class="text-sm md:text-lg font-extrabold text-slate-900 mb-1 md:mb-2">Strict "Zero Hidden Cost" Policy</h4>
-                            <p class="text-slate-500 text-[11px] md:text-sm leading-relaxed font-medium">No surprise bills. Complete breakup of Prof. Fees vs Govt stamp duty provided upfront.</p>
+                            <h4 class="text-lg md:text-2xl font-black text-slate-900 mb-2">Zero Hidden Cost Policy</h4>
+                            <p class="text-slate-500 text-sm md:text-base leading-relaxed font-bold">No surprise bills. Complete breakup of Prof. Fees vs Govt stamp duty provided upfront in writing.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-10 md:mt-16 text-center border-t border-slate-100 pt-10 md:pt-16 px-4">
-                    <p class="text-slate-400 font-bold text-[9px] md:text-xs uppercase tracking-[0.2em] mb-6 md:mb-8 leading-relaxed">No commitment required. Speak with an expert first.</p>
-                    <button onclick="openModal()" class="btn-shine w-full sm:w-auto px-10 md:px-12 py-4 md:py-6 bg-blue-600 text-white rounded-xl md:rounded-2xl font-black text-base md:text-xl shadow-2xl active:scale-95 transition-transform">
+                <div class="mt-12 md:mt-20 text-center border-t border-slate-100 pt-12 md:pt-16">
+                    <p class="text-slate-400 font-black text-[10px] md:text-sm uppercase tracking-[0.3em] mb-8">Ready to start? Speak with an expert advisor first.</p>
+                    <button onclick="openModal()" class="btn-shine w-full sm:w-auto px-12 md:px-16 py-5 md:py-7 bg-blue-600 text-white rounded-[2rem] font-black text-lg md:text-2xl shadow-[0_30px_60px_-10px_rgba(37,99,235,0.4)] active:scale-95 transition-transform">
                         Claim My Free Offer & Register
                     </button>
                 </div>
@@ -404,18 +471,18 @@
     </section>
 
     <!-- FAQ Accordion -->
-    <section class="py-12 md:py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-4 md:px-8">
-            <h2 class="text-2xl md:text-4xl font-extrabold mb-8 md:mb-12 text-center text-slate-900">Common Questions</h2>
-            <div class="space-y-3 md:space-y-4">
-                <div class="faq-item border border-slate-200 rounded-xl md:rounded-[2rem] bg-white overflow-hidden transition-all duration-300 hover:shadow-md">
-                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-5 md:p-8 text-left hover:bg-slate-50 outline-none">
-                        <span class="font-extrabold text-slate-800 text-xs md:text-base pr-4">How long does the company registration take?</span>
-                        <svg class="faq-icon text-slate-400 transition duration-500 shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    <section class="py-16 md:py-28 bg-white">
+        <div class="max-w-4xl mx-auto px-5 md:px-10">
+            <h2 class="text-3xl md:text-5xl font-black mb-10 md:mb-16 text-center text-slate-900 tracking-tight">Common Questions</h2>
+            <div class="space-y-4 md:space-y-6">
+                <div class="faq-item border border-slate-200 rounded-[1.5rem] md:rounded-[2.5rem] bg-white overflow-hidden transition-all duration-300 hover:shadow-lg">
+                    <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between p-6 md:p-10 text-left hover:bg-slate-50 outline-none">
+                        <span class="font-black text-slate-800 text-sm md:text-xl pr-4">How long does the company registration take?</span>
+                        <svg class="faq-icon text-slate-400 transition duration-500 shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-content">
-                        <div class="px-5 md:px-8 pb-5 md:pb-8 text-slate-500 text-[11px] md:text-base leading-relaxed">
-                            Usually 7–10 working days for government approvals. Full "Ready to Bill" status takes around 25 days.
+                        <div class="px-6 md:px-10 pb-6 md:pb-10 text-slate-500 text-xs md:text-lg font-bold leading-relaxed">
+                            Usually 7–10 working days for government approvals. Our goal is 25 days for full "Ready to Bill" status including all tax and compliance documentation.
                         </div>
                     </div>
                 </div>
@@ -424,66 +491,67 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-16 md:py-24 bg-white border-t border-slate-200 text-center px-4">
-        <h2 class="text-2xl md:text-4xl font-black mb-6 md:mb-8 text-slate-900 tracking-tight px-4">Ready to launch your business?</h2>
-        <button onclick="openModal()" class="btn-shine px-8 md:px-12 py-4 md:py-6 bg-blue-600 text-white rounded-xl md:rounded-2xl font-black text-base md:text-xl shadow-2xl mb-12 active:scale-95">
-            Get Free CA Consultation
+    <footer class="py-20 md:py-32 bg-white border-t border-slate-200 text-center px-5">
+        <h2 class="text-3xl md:text-5xl font-black mb-8 md:mb-12 text-slate-900 tracking-tighter">Ready to launch your legacy?</h2>
+        <button onclick="openModal()" class="btn-shine px-12 md:px-16 py-5 md:py-7 bg-blue-600 text-white rounded-[2rem] font-black text-lg md:text-2xl shadow-[0_40px_70px_-15px_rgba(37,99,235,0.4)] mb-16 active:scale-95">
+            Free CA Consultation
         </button>
-        <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-[8px] md:text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-10 md:mb-12">
-            <a href="#" class="hover:text-blue-600 transition">Privacy Policy</a>
-            <a href="#" class="hover:text-blue-600 transition">Terms of Service</a>
-            <a href="#" class="hover:text-blue-600 transition">Refund Policy</a>
+        <div class="flex flex-wrap justify-center gap-8 md:gap-12 text-[10px] md:text-xs text-slate-400 font-black uppercase tracking-[0.3em] mb-12">
+            <a href="#" class="hover:text-blue-600">Privacy Policy</a>
+            <a href="#" class="hover:text-blue-600">Terms of Service</a>
+            <a href="#" class="hover:text-blue-600">Refund Policy</a>
         </div>
-        <p class="text-slate-500 font-bold text-[8px] md:text-[10px] mb-2">L-30B, LGF, Malviya Nagar, New Delhi – 110017</p>
-        <p class="text-slate-400 text-[8px] md:text-[10px] tracking-[0.2em] uppercase font-black">© 2026 Taxly India Private Limited. All Rights Reserved.</p>
+        <p class="text-slate-600 font-extrabold text-[10px] md:text-sm mb-3">L-30B, LGF, Malviya Nagar, New Delhi – 110017</p>
+        <p class="text-slate-400 text-[10px] md:text-xs tracking-[0.3em] uppercase font-black">© 2026 Taxly India Private Limited. All Rights Reserved.</p>
     </footer>
 
     <!-- Mobile Sticky CTA -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/95 backdrop-blur-xl z-[60] border-t border-slate-100 shadow-xl pb-safe">
-        <button onclick="openModal()" class="w-full py-4 bg-blue-600 text-white rounded-xl font-black text-sm active:scale-95">
+    <div class="md:hidden fixed bottom-0 left-0 right-0 p-5 bg-white/95 backdrop-blur-xl z-[60] border-t border-slate-100 shadow-2xl pb-safe">
+        <button onclick="openModal()" class="w-full py-4.5 bg-blue-600 text-white rounded-2xl font-black text-sm active:scale-95 shadow-xl">
             Get Free Consultation
         </button>
     </div>
 
-    <!-- Lead Modal -->
+    <!-- Lead Modal (HIGHLY RESPONSIVE) -->
     <div id="leadModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
-        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
-        <div class="relative bg-white w-full max-w-lg rounded-2xl md:rounded-[2.5rem] shadow-2xl overflow-hidden transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
-            <div class="bg-blue-600 p-6 md:p-10 text-white text-center">
-                <h3 class="text-xl md:text-3xl font-black mb-2">Secure Your Offer</h3>
-                <p class="text-blue-100 font-bold text-[10px] md:text-sm">Register + Get Free Billing Software</p>
-                <button onclick="closeModal()" class="absolute top-4 md:top-6 right-4 md:right-6 text-white/50 hover:text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        <div class="absolute inset-0 bg-slate-900/70 backdrop-blur-md" onclick="closeModal()"></div>
+        <div class="relative bg-white w-full max-w-lg rounded-[2.5rem] md:rounded-[3.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] overflow-hidden transform transition-all duration-300 scale-95 opacity-0" id="modalContent">
+            <div class="bg-blue-600 p-8 md:p-12 text-white text-center relative">
+                <h3 class="text-2xl md:text-4xl font-black mb-3 leading-tight">Secure Your Offer</h3>
+                <p class="text-blue-100 font-bold text-xs md:text-lg">Register + Get Free Billing Software</p>
+                <button onclick="closeModal()" class="absolute top-6 right-6 text-white/50 hover:text-white transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
             </div>
-            <form id="leadForm" class="p-6 md:p-10 space-y-4 md:space-y-5">
+            <form id="leadForm" class="p-8 md:p-12 space-y-5 md:space-y-6">
                 <div>
-                    <label class="block text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1 md:mb-2 ml-1">Full Name</label>
-                    <input type="text" required placeholder="Ex: Rahul Sharma" class="w-full px-4 md:px-5 py-3 rounded-lg md:rounded-xl border-2 border-slate-100 focus:border-blue-600 focus:outline-none font-semibold text-slate-900 placeholder:text-slate-300 bg-slate-50 text-sm">
+                    <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">Full Name</label>
+                    <input type="text" required placeholder="Ex: Rahul Sharma" class="w-full px-6 py-4 rounded-2xl border-2 border-slate-100 focus:border-blue-600 focus:outline-none font-bold text-slate-900 bg-slate-50 text-sm md:text-base">
                 </div>
                 <div>
-                    <label class="block text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1 md:mb-2 ml-1">WhatsApp Mobile</label>
-                    <input type="tel" required placeholder="+91 XXXXX XXXXX" class="w-full px-4 md:px-5 py-3 rounded-lg md:rounded-xl border-2 border-slate-100 focus:border-blue-600 focus:outline-none font-semibold text-slate-900 placeholder:text-slate-300 bg-slate-50 text-sm">
+                    <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">WhatsApp Number</label>
+                    <input type="tel" required placeholder="+91 XXXXX XXXXX" class="w-full px-6 py-4 rounded-2xl border-2 border-slate-100 focus:border-blue-600 focus:outline-none font-bold text-slate-900 bg-slate-50 text-sm md:text-base">
                 </div>
                 <div>
-                    <label class="block text-[8px] md:text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1 md:mb-2 ml-1">Choose Service</label>
-                    <select class="w-full px-4 md:px-5 py-3 rounded-lg md:rounded-xl border-2 border-slate-100 focus:border-blue-600 focus:outline-none font-semibold text-slate-900 bg-slate-50 cursor-pointer text-sm">
+                    <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">Service Required</label>
+                    <select class="w-full px-6 py-4 rounded-2xl border-2 border-slate-100 focus:border-blue-600 focus:outline-none font-bold text-slate-900 bg-slate-50 cursor-pointer text-sm md:text-base">
                         <option>Company Incorporation</option>
-                        <option>GST Registration</option>
+                        <option>GST Registration & Filing</option>
                         <option>Trademark / ISO Filing</option>
+                        <option>Startup India Advisory</option>
                     </select>
                 </div>
-                <button type="submit" class="w-full py-4 bg-blue-600 text-white rounded-xl md:rounded-2xl font-black text-sm md:text-lg hover:bg-blue-700 transition shadow-xl active:scale-95">
+                <button type="submit" class="w-full py-5 bg-blue-600 text-white rounded-[2rem] font-black text-lg md:text-xl shadow-2xl active:scale-95 transition-all">
                     Activate Free Offer
                 </button>
             </form>
-            <div id="successMessage" class="hidden p-10 md:p-16 text-center">
-                <div class="w-16 h-16 md:w-20 md:h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div id="successMessage" class="hidden p-12 md:p-20 text-center">
+                <div class="w-20 h-20 md:w-28 md:h-28 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" md:width="56" md:height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                 </div>
-                <h3 class="text-xl md:text-2xl font-black mb-2 text-slate-900">Request Sent!</h3>
-                <p class="text-slate-500 font-bold mb-8 text-xs md:text-base">Our senior CA will call you within 15 mins.</p>
-                <button onclick="closeModal()" class="text-blue-600 font-black text-sm hover:underline">Close Window</button>
+                <h3 class="text-2xl md:text-4xl font-black mb-4 text-slate-900 tracking-tighter">Request Sent!</h3>
+                <p class="text-slate-500 font-bold mb-10 text-sm md:text-xl leading-relaxed">A senior CA advisor will call you on WhatsApp within 15 minutes.</p>
+                <button onclick="closeModal()" class="text-blue-600 font-black text-base md:text-xl hover:underline underline-offset-8 decoration-4">Close Window</button>
             </div>
         </div>
     </div>
